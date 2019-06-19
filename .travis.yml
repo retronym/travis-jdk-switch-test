@@ -3,4 +3,4 @@ dist: trusty
 language: scala
 jdk:
   - oraclejdk8
-script: for v in openjdk11 oraclejdk11 openjdk8 oraclejdk8; do echo $v; (~/bin/install-jdk.sh --install $v --target $HOME/$v && $HOME/bin/java -version) || echo "not available"; done
+script: java -version && for v in openjdk11 oraclejdk11 openjdk8 oraclejdk8; do echo $v; (~/bin/install-jdk.sh --install $v --target $HOME/$v && $HOME/bin/java -version) || echo "not available"; done
