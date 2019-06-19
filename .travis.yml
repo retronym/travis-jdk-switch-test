@@ -2,12 +2,4 @@ sudo: false
 language: scala
 jdk:
   - openjdk11
-script:
-  jdk_switcher openjdk11
-  java -version
-  jdk_switcher oraclejdk11
-  java -version
-  jdk_switcher openjdk8
-  java -version
-  jdk_switcher oraclejdk8
-  java -version
+script: for v in openjdk11 oraclejdk11 openjdk8 oraclejdk8; do echo $v; (jdk_switcher $V && java -version) || echo "not available"; done
