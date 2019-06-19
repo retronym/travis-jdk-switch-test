@@ -1,0 +1,9 @@
+sudo: false
+language: scala
+jdk:
+  - openjdk8
+script:
+  set -x
+  java -version
+  jdk_switcher openjdk11
+  java -version
