@@ -2,4 +2,4 @@ sudo: false
 language: scala
 jdk:
   - openjdk11
-script: for v in openjdk11 oraclejdk11 openjdk8 oraclejdk8; do echo $v; (jdk_switcher $V && java -version) || echo "not available"; done
+script: for v in openjdk11 oraclejdk11 openjdk8 oraclejdk8; do echo $v; ($TRAVIS_BUILD_DIR/install-jdk.sh --install $v --target $HOME/$v && $HOME/bin/java -version) || echo "not available"; done
