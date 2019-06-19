@@ -1,9 +1,13 @@
 sudo: false
 language: scala
 jdk:
-  - openjdk8
+  - openjdk11
 script:
-  set -x
-  java -version
   jdk_switcher openjdk11
+  java -version
+  jdk_switcher oraclejdk11
+  java -version
+  jdk_switcher openjdk8
+  java -version
+  jdk_switcher oraclejdk8
   java -version
